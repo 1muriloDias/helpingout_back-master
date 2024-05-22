@@ -3,6 +3,7 @@ using helpingout.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+
 namespace helpingout.Interfaces
 {
 	public interface IUsuarioRepository
