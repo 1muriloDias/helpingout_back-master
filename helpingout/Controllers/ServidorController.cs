@@ -61,13 +61,13 @@ namespace helpingout.Controllers
         [HttpPost]
         public JsonResult CriarEditar(Usuario usuario)
         {
-            if (usuario.id_usuario == 0)
+            if (usuario.Id == 0)
             {
-                _context.usuarios.Add(usuario);
+                _context.Usuarios.Add(usuario);
             }
             else
             {
-                var usuarioNoBD = _context.usuarios.Find(usuario.id_usuario);
+                var usuarioNoBD = _context.Usuarios.Find(usuario.Id);
                 if (usuarioNoBD == null)
                 {
                     return new JsonResult(NotFound());
@@ -81,7 +81,7 @@ namespace helpingout.Controllers
         [HttpGet]
         public JsonResult Pegar(int id)
         {
-            var result = _context.usuarios.Find(id);
+            var result = _context.Usuarios.Find(id);
             if (result == null)
             {
                 return new JsonResult(NotFound());
@@ -93,13 +93,13 @@ namespace helpingout.Controllers
         [HttpDelete]
         public JsonResult Deletar(int id)
         {
-            var result = _context.usuarios.Find(id);
+            var result = _context.Usuarios.Find(id);
 
             if (result == null)
             {
                 return new JsonResult(NotFound());
             }
-            _context.usuarios.Remove(result);
+            _context.Usuarios.Remove(result);
             _context.SaveChanges();
             return new JsonResult(NoContent());
         }
@@ -108,7 +108,7 @@ namespace helpingout.Controllers
         [HttpGet("/GetAll")]
         public JsonResult Todos()
         {
-            var result = _context.usuarios.ToList();
+            var result = _context.Usuarios.ToList();
             return new JsonResult(Ok(result));
         }
 

@@ -28,7 +28,7 @@ public class QrCodeGenerator
 [ApiController]
 [Route("api/[controller]")]
 public class ConviteController : ControllerBase
-{
+{ 
     private readonly UsuarioService _usuarioService;
 
     public ConviteController(UsuarioService usuarioService)

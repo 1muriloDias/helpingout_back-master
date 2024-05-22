@@ -2,6 +2,7 @@ using helpingout.Dtos.Usuario;
 using helpingout.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using helpingout.Dtos;
 
 
 namespace helpingout.Interfaces

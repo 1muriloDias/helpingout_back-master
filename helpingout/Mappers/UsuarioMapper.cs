@@ -1,3 +1,7 @@
+using helpingout.Models;
+using helpingout.Dtos;
+using helpingout.Dtos.Usuario;
+
 namespace helpingout.Mappers
 {
 	public static class UsuarioMapper

@@ -9,6 +9,7 @@ using helpingout.Mappers;
 using helpingout.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using helpingout.Dtos;
 
 namespace helpingout.Controllers
 {
@@ -28,6 +29,11 @@ namespace helpingout.Controllers
         [HttpGet]
         public async Task<IActionResult> GetALL([FromQuery] QueryObject query)
         {
+            if (query == null)
+            {
+                query = new QueryObject(); // Inicializar com valores padrão se necessário
+            }
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
